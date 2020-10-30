@@ -2,6 +2,21 @@
 
 # Base class for models
 class Base
+  @@all = []
+
+  def initialize
+    super
+    @@all << self
+  end
+
+  def self.all
+    @@all.select { |x| x.instance_of? self }
+  end
+
+  def self.count
+    all.count
+  end
+
   def self.has_many(name)
     instance_variable_set("@#{name}", [])
 

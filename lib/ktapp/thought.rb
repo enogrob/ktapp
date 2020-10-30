@@ -18,6 +18,10 @@ class Thought < Base
     @status = false
   end
 
+  def methods
+    Thought.instance_methods(false) - [:methods]
+  end
+
   private
 
   def sample
