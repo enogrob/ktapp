@@ -19,7 +19,7 @@ class Thought < Base
   end
 
   def methods
-    Thought.instance_methods(false) - [:methods]
+    self.class.instance_methods(false) - [:methods]
   end
 
   private

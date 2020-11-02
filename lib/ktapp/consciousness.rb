@@ -22,6 +22,6 @@ class Consciousness < Base
   end
 
   def methods
-    Consciousness.instance_methods(false) - [:methods]
+    self.class.instance_methods(false) - [:methods]
   end
 end
